@@ -1,0 +1,113 @@
+<mxfile host="app.diagrams.net" modified="2023-08-08T20:30:22.424Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36" etag="7gK-mPpB6jhDVNxX5_cT" version="21.1.4" type="device">
+  <diagram name="Page-1" id="PuTzDjwvO23WC_yRpOfw">
+    <mxGraphModel dx="1038" dy="655" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="15000" pageHeight="15000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-1" value="API GATEWAY" style="rounded=0;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="200" y="390" width="540" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-2" value="User" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="720" y="280" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-3" value="Wallet" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="720" y="480" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-4" value="Auth" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="500" y="150" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-5" value="RateLimit" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="500" y="230" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-6" value="Fiat" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="200" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-7" value="BTC" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="320" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-8" value="ETH" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="440" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-9" value="ADA" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="560" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-14" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KDWcjoJD74Qy6uk1quxI-1" target="KDWcjoJD74Qy6uk1quxI-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="580" y="400" as="sourcePoint" />
+            <mxPoint x="630" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-15" value="REST&lt;br&gt;Register&lt;br&gt;Login&lt;br&gt;Logout" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KDWcjoJD74Qy6uk1quxI-14">
+          <mxGeometry x="0.1069" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-17" value="Kafka" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="960" y="370" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-18" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KDWcjoJD74Qy6uk1quxI-2" target="KDWcjoJD74Qy6uk1quxI-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="830" y="450" as="sourcePoint" />
+            <mxPoint x="880" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-19" value="Topic: UserEvents&lt;br&gt;UserRegisteredEvent&lt;br&gt;&lt;br&gt;Topic: WalletCommands&lt;br&gt;CreateUSDWallet&lt;br&gt;CreateBTCWallet&lt;br&gt;CreateETHWallet&lt;br&gt;CreateADAWallet" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KDWcjoJD74Qy6uk1quxI-18">
+          <mxGeometry x="0.2338" y="-3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-20" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KDWcjoJD74Qy6uk1quxI-1" target="KDWcjoJD74Qy6uk1quxI-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="830" y="450" as="sourcePoint" />
+            <mxPoint x="880" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-21" value="REST&lt;br&gt;deposit (fiat/crypto)&lt;br&gt;withdraw (fiat/crypto)&lt;br&gt;POST wallet/{cryptoType}" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KDWcjoJD74Qy6uk1quxI-20">
+          <mxGeometry x="-0.1434" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-23" value="Topic: WalletEvents&lt;br&gt;BTCWalletCreated" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KDWcjoJD74Qy6uk1quxI-7" target="KDWcjoJD74Qy6uk1quxI-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="830" y="390" as="sourcePoint" />
+            <mxPoint x="880" y="340" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-24" value="Topic: WalletEvents&lt;br&gt;ETHWalletCreated" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KDWcjoJD74Qy6uk1quxI-8" target="KDWcjoJD74Qy6uk1quxI-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1130" y="470" as="sourcePoint" />
+            <mxPoint x="990" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-25" value="Topic: WalletEvents&lt;br&gt;ADAWalletCreated" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1.013;entryY=0.578;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="KDWcjoJD74Qy6uk1quxI-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1160" y="600" as="sourcePoint" />
+            <mxPoint x="1020" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-27" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="KDWcjoJD74Qy6uk1quxI-6" target="KDWcjoJD74Qy6uk1quxI-17">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="830" y="380" as="sourcePoint" />
+            <mxPoint x="880" y="330" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-28" value="Topic: WalletEvents&lt;br&gt;FiatWalletCreated" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KDWcjoJD74Qy6uk1quxI-27">
+          <mxGeometry x="-0.1781" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-29" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="KDWcjoJD74Qy6uk1quxI-17" target="KDWcjoJD74Qy6uk1quxI-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="830" y="370" as="sourcePoint" />
+            <mxPoint x="880" y="320" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="KDWcjoJD74Qy6uk1quxI-30" value="Topic: WalletEvents" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="KDWcjoJD74Qy6uk1quxI-29">
+          <mxGeometry x="0.2196" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
