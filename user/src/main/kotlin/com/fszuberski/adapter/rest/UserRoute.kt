@@ -15,7 +15,7 @@ private const val BASE_API_ROUTE = "v1"
 
 fun Route.userRouting(registerUserUseCase: RegisterUserUseCase) {
     route(BASE_API_ROUTE) {
-        route("user") {
+        route("users") {
             post {
                 try {
                     val userRegistrationRequest = call.receive<RegisterUser.Request>()
