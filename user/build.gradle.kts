@@ -1,14 +1,18 @@
+import com.github.davidmc24.gradle.plugin.avro.GenerateAvroJavaTask
+
 val ktor_version: String by project
 val kotlin_version: String by project
 val logback_version: String by project
 val koin_version: String by project
 val junit_version: String by project
 val arrow_version: String by project
+val avro_version: String by project
 
 plugins {
     kotlin("jvm") version "1.9.0"
     id("io.ktor.plugin") version "2.3.3"
     id("org.jetbrains.kotlin.plugin.serialization") version "1.9.0"
+    id("com.github.davidmc24.gradle.plugin.avro") version "1.8.0"
 }
 
 group = "com.fszuberski"
@@ -29,6 +33,32 @@ tasks.withType<Test> {
     useJUnitPlatform()
 }
 
+kotlin {
+    jvmToolchain(17)
+}
+
+//tasks.withType<GenerateAvroJavaTask> {
+//    setSource("../avro")
+////    setOutputDir(file("gen"))
+//}
+
+val generateAvro = tasks.register<GenerateAvroJavaTask>("generateAvro") {
+    setSource("../avro")
+    setOutputDir(file("build/generated-main-avro-java"))
+}
+
+tasks.named("compileKotlin") {
+    dependsOn(generateAvro)
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir("build/generated-main-avro-java")
+        }
+    }
+}
+
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
@@ -39,9 +69,9 @@ dependencies {
     implementation("io.insert-koin:koin-ktor:$koin_version")
     implementation("io.arrow-kt:arrow-core:$arrow_version")
     implementation("io.arrow-kt:arrow-fx-coroutines:$arrow_version")
+    implementation("org.apache.avro:avro:$avro_version")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junit_version")
     testImplementation("org.junit.jupiter:junit-jupiter-engine:$junit_version")
-//    testImplementation("org.junit.jupiter:junit-jupiter:$junit_version")
 }
