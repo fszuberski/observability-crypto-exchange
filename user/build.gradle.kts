@@ -37,11 +37,6 @@ kotlin {
     jvmToolchain(17)
 }
 
-//tasks.withType<GenerateAvroJavaTask> {
-//    setSource("../avro")
-////    setOutputDir(file("gen"))
-//}
-
 val generateAvro = tasks.register<GenerateAvroJavaTask>("generateAvro") {
     setSource("../avro")
     setOutputDir(file("build/generated-main-avro-java"))
