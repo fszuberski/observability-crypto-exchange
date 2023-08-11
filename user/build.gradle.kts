@@ -7,6 +7,7 @@ val koin_version: String by project
 val junit_version: String by project
 val arrow_version: String by project
 val avro_version: String by project
+val kafka_version: String by project
 
 plugins {
     kotlin("jvm") version "1.9.0"
@@ -27,7 +28,9 @@ application {
 
 repositories {
     mavenCentral()
-}
+     maven {
+        url = uri("https://packages.confluent.io/maven")
+    }}
 
 tasks.withType<Test> {
     useJUnitPlatform()
@@ -65,6 +68,8 @@ dependencies {
     implementation("io.arrow-kt:arrow-core:$arrow_version")
     implementation("io.arrow-kt:arrow-fx-coroutines:$arrow_version")
     implementation("org.apache.avro:avro:$avro_version")
+    implementation("org.apache.kafka:kafka-clients:$kafka_version")
+    implementation("io.confluent:kafka-avro-serializer:7.4.0")
     testImplementation("io.ktor:ktor-server-tests-jvm")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$junit_version")
