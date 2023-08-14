@@ -1,7 +1,7 @@
-package com.fszuberski
+package fszuberski
 
 import com.fszuberski.common.plugins.configureRouting
-import com.fszuberski.plugins.*
+import fszuberski.plugins.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 import io.ktor.http.*

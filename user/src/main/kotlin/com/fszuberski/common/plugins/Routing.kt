@@ -1,4 +1,4 @@
-package com.fszuberski.plugins
+package com.fszuberski.common.plugins
 
 import com.fszuberski.adapter.rest.userRouting
 import io.ktor.server.application.*

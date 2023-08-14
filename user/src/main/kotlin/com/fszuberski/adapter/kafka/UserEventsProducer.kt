@@ -8,13 +8,13 @@ import org.apache.kafka.clients.producer.RecordMetadata
 
 private const val TOPIC_NAME = "user-topic"
 
-class UserProducer : ProduceUserCreatedPort {
+class UserEventsProducer : ProduceUserCreatedPort {
     override fun produceUserCreatedEvent(user: User) {
         // TODO: immediately closes the producer once a message is produced.
         // Could be cached so we don't reestablish connections.
         Configuration.producer().use { producer ->
             try {
-                val userCreatedEvent = UserCreatedEvent(user.name, user.surname)
+                val userCreatedEvent = UserCreatedEvent(user.id.toString(), user.name, user.surname)
                 producer.send(
                     ProducerRecord(TOPIC_NAME, user.id.toString(), userCreatedEvent)
                 ) { meta: RecordMetadata, e: Exception? ->

@@ -5,7 +5,6 @@ val kotlin_version: String by project
 val logback_version: String by project
 val koin_version: String by project
 val junit_version: String by project
-val arrow_version: String by project
 val avro_version: String by project
 val kafka_version: String by project
 
@@ -16,11 +15,11 @@ plugins {
     id("com.github.davidmc24.gradle.plugin.avro") version "1.8.0"
 }
 
-group = "com.fszuberski"
+group = "fszuberski"
 version = "0.0.1"
 
 application {
-    mainClass.set("io.ktor.server.netty.EngineMain")
+    mainClass.set("fszuberski.ApplicationKt")
 
     val isDevelopment: Boolean = project.ext.has("development")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
@@ -50,14 +49,6 @@ tasks.named("compileKotlin") {
     dependsOn(generateAvro)
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir("build/generated-main-avro-java")
-        }
-    }
-}
-
 dependencies {
     implementation("io.ktor:ktor-server-core-jvm")
     implementation("io.ktor:ktor-server-content-negotiation-jvm")
@@ -66,8 +57,6 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:$logback_version")
     implementation("io.insert-koin:koin-core:$koin_version")
     implementation("io.insert-koin:koin-ktor:$koin_version")
-    implementation("io.arrow-kt:arrow-core:$arrow_version")
-    implementation("io.arrow-kt:arrow-fx-coroutines:$arrow_version")
     implementation("org.apache.avro:avro:$avro_version")
     implementation("org.apache.kafka:kafka-clients:$kafka_version")
     implementation("io.confluent:kafka-avro-serializer:7.4.0")

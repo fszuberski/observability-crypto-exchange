@@ -4,6 +4,11 @@
   "namespace": "com.fszuberski.cryptoexchange.user",
   "fields": [
     {
+      "name": "id",
+      "type": "string",
+      "doc": "UUID of the user"
+    },
+    {
       "name": "name",
       "type": "string",
       "doc": "Name of the user"
