@@ -6,7 +6,7 @@ import com.fszuberski.port.out.ProduceUserCreatedPort
 import org.apache.kafka.clients.producer.ProducerRecord
 import org.apache.kafka.clients.producer.RecordMetadata
 
-private const val TOPIC_NAME = "user-topic"
+private const val TOPIC_NAME = "user-events"
 
 class UserEventsProducer : ProduceUserCreatedPort {
     override fun produceUserCreatedEvent(user: User) {

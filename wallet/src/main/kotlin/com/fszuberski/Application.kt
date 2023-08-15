@@ -21,5 +21,8 @@ fun Application.module() {
 }
 
 fun Application.startConsumers() {
-    get<UserEventsConsumer>().consume() // TODO: properly close consumers
+    environment.monitor.subscribe(ApplicationStopPreparing) {
+        get<UserEventsConsumer>().stop()
+    }
+    get<UserEventsConsumer>().start()
 }
